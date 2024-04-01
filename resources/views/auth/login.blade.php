@@ -1,8 +1,20 @@
 @extends('layouts.logout')
 
 @section('content')
+
+<!--バリデーションメッセージ-->
+@if($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+@endif
+
 <!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '/top]) !!}
+{!! Form::open(['url' => '/added']) !!}
 
 <p>AtlasSNSへようこそ</p>
 

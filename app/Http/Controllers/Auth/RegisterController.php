@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterFormRequest;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 
@@ -41,14 +42,14 @@ class RegisterController extends Controller
 
     public function register(Request $request){
 
-        $request->validate([
+        if($request->isMethod('post')){
+
+            $request->validate([
             'username' => 'required|min:2|max:12',
             'mail' => 'required|unique:users,mail|email|min:5|max:40',
             'password' => 'required|alpha_num|min:8|max:20|confirmed',
             'password_confirmation' => 'required|alpha_num|min:8|max:20',
         ]);
-
-        if($request->isMethod('post')){
 
             $username = $request->input('username');
             $mail = $request->input('mail');
@@ -65,7 +66,7 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
-    public function added(){
-        return view('auth.added');
+    public function registerView(){
+        return view('auth.register');
     }
 }
