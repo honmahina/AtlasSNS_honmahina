@@ -2,6 +2,7 @@
 
 @section('content')
 
+{!! Form::open(['url' => '/added']) !!}
 <div id="clear">
   <p>{{session('username')}}さん</p>
   <p>ようこそ！AtlasSNSへ！</p>
