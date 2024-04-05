@@ -40,7 +40,7 @@ Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
 
 //ログインページへの移行
-Route::get('/top','Auth\LoginController@login');
+// Route::get('/top','Auth\LoginController@login');
 
 //新規登録のページ
-Route::get('/login','Auth\RegisterController@register');
+// Route::get('/login','Auth\RegisterController@register');

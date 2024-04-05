@@ -2,8 +2,9 @@
 
 @section('content')
 
+<!--バリデーションメッセージ-->
 @if($errors->any())
-    <div class="edit_error">
+    <div class="alert alert-danger">
       <ul>
         @foreach($errors->all() as $error)
         <li>{{ $error }}</li>
@@ -13,7 +14,7 @@
 @endif
 
 <!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '/login']) !!}
+{!! Form::open(['url' => '/register']) !!}
 
 
 <h2>新規ユーザー登録</h2>
