@@ -61,14 +61,14 @@ class RegisterController extends Controller
                 'password' => bcrypt($password),
             ]);
             //セッションを使用してユーザー名を表示させる
-            $input = $request->session()->get('username',$username);
-            return redirect('added');
+            $user = $request->session()->get('username',$username);
+            return redirect('added')->with('username',$user);
 
         }
         return view('auth.register');
     }
 
-    public function registerView(){
-        return view('auth.register');
+    public function added(){
+        return view('auth.added');
     }
 }
