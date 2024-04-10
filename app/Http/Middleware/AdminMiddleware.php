@@ -13,8 +13,11 @@ class AdminMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if($request->ip() === '/login'){
+            return $next($request);
+        }
+        return redirect('/err');
     }
 }

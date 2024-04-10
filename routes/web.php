@@ -44,3 +44,9 @@ Route::get('/follower-list','PostsController@index');
 
 //新規登録のページ
 // Route::get('/login','Auth\RegisterController@register');
+
+// Route::group(['middleware' => 'auth'], function(){
+//   Route::get('/post','PostController@showCreateForm')->name('posts.create');
+//   Route::post('/post','PostController@create');
+// });
+Route::get('/Admin',[HelloController::class,'index'])->middleware('admin');
