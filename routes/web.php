@@ -50,4 +50,4 @@ Route::get('/follower-list','PostsController@index');
 //    Route::post('/post','PostController@create');
 //  });
 // Route::get('/Admin',[HelloController::class,'index'])->middleware('admin');
-Route::get('/login', 'Auth\LoginController@login')-> name('login');
+Route::get('/login', 'Auth\LoginController@login')-> name('/login');
