@@ -45,11 +45,11 @@ Route::get('/follower-list','PostsController@index');
 //新規登録のページ
 // Route::get('/login','Auth\RegisterController@register');
 
-// Route::group(['middleware' => 'auth'], function(){
-// Route::get('/login','Auth\LoginController@login')->name('/login');
-// Route::post('/login', 'Auth\LoginController@login');
+Route::group(['middleware' => 'Admin'], function(){
+Route::get('/login','Auth\LoginController@login');
+Route::post('/login', 'Auth\LoginController@login');
 // Route::get('/post','PostController@showCreateForm');
 // Route::get('/top','PostsController@index')->name('/top');
-// });
+});
 // Route::get('/Admin',[HelloController::class,'index'])->middleware('admin');
 // Route::get('/login', 'Auth\LoginController@login')-> name('/login');
