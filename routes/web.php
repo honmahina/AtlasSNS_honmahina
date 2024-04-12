@@ -20,7 +20,7 @@
 
 
 //ログアウト中のページ
-Route::get('/login', 'Auth\LoginController@login');
+Route::get('/login', 'Auth\LoginController@login')->middleware('Admin');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/register', 'Auth\RegisterController@register');
@@ -30,7 +30,7 @@ Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
 //ログイン中のページ
-Route::get('/top','PostsController@index');
+Route::get('/top','PostsController@index')->name('/top');
 
 Route::get('/profile','UsersController@profile');
 
@@ -45,9 +45,11 @@ Route::get('/follower-list','PostsController@index');
 //新規登録のページ
 // Route::get('/login','Auth\RegisterController@register');
 
-Route::group(['middleware' => 'auth'], function(){
-  Route::get('/top','PostsController@index')->name('/top');
-Route::get('/post','PostController@showCreateForm');
-});
+// Route::group(['middleware' => 'auth'], function(){
+// Route::get('/login','Auth\LoginController@login')->name('/login');
+// Route::post('/login', 'Auth\LoginController@login');
+// Route::get('/post','PostController@showCreateForm');
+// Route::get('/top','PostsController@index')->name('/top');
+// });
 // Route::get('/Admin',[HelloController::class,'index'])->middleware('admin');
 // Route::get('/login', 'Auth\LoginController@login')-> name('/login');
