@@ -19,7 +19,7 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
     if(!Auth::check()){
-        return route('/login');
+        return route('/top');
     }
         return $next($request);
     }

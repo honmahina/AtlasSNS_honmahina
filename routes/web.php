@@ -46,10 +46,8 @@ Route::get('/follower-list','PostsController@index');
 // Route::get('/login','Auth\RegisterController@register');
 
 Route::group(['middleware' => 'auth'], function(){
-Route::get('/login','Auth\LoginController@login')->name('/login');
-Route::post('/login', 'Auth\LoginController@login');
+  Route::get('/top','PostsController@index')->name('/top');
 Route::get('/post','PostController@showCreateForm');
-Route::get('/top','PostsController@index');
 });
 // Route::get('/Admin',[HelloController::class,'index'])->middleware('admin');
 // Route::get('/login', 'Auth\LoginController@login')-> name('/login');
