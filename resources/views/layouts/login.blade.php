@@ -8,6 +8,7 @@
     <title></title>
     <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
     <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
+    <link rel="stylesheet" href="{{ asset('public/script.js') }}">
     <!--スマホ,タブレット対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!--サイトのアイコン指定-->
@@ -22,18 +23,22 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a><img src="images/logo.png"></a></h1>
+        <h1><a href="/top"><img src="images/atlas.png"></a></h1>
             <div id="">
-                <div id="">
                     <p>{{session('username')}}さん<img src="images/arrow.png"></p>
                 <div>
-                <ul>
+                    <div class="parent">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="child">
+                        <ul>
                     <li><a href="/top">ホーム</a></li>
                     <li><a href="/profile">プロフィール</a></li>
                     <li><a href="/logout">ログアウト</a></li>
                 </ul>
+                    </div>
             </div>
-        </div>
     </header>
     <div id="row">
         <div id="container">
@@ -58,7 +63,7 @@
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="js/jquery-3.4.1.min.js"></scrip>
     <script src="JavaScriptファイルのURL"></script>
 </body>
 </html>
