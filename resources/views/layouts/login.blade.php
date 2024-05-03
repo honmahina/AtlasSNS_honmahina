@@ -8,7 +8,6 @@
     <title></title>
     <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
     <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
-    <link rel="stylesheet" href="{{ asset('public/script.js') }}">
     <!--スマホ,タブレット対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!--サイトのアイコン指定-->
@@ -25,20 +24,21 @@
         <div id = "head">
         <h1><a href="/top"><img src="images/atlas.png"></a></h1>
             <div id="">
-                    <p>{{session('username')}}さん<img src="images/arrow.png"></p>
+                <div id="">
+                    <p>{{Auth::user()->username}}さん<img src="images/arrow.png"></p>
                 <div>
-                    <div class="parent">
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="child">
-                        <ul>
+                    <button type="button" class="menu-btn">
+                        <span class="inn"></span>
+                    </button>
+                    <nav class="menu">
+<ul>
                     <li><a href="/top">ホーム</a></li>
                     <li><a href="/profile">プロフィール</a></li>
                     <li><a href="/logout">ログアウト</a></li>
                 </ul>
-                    </div>
+                    </nav>
             </div>
+        </div>
     </header>
     <div id="row">
         <div id="container">
@@ -46,7 +46,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>{{session('username')}}さんの</p>
+                <p>{{Auth::user()->username}}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>
@@ -63,7 +63,7 @@
     </div>
     <footer>
     </footer>
-    <script src="js/jquery-3.4.1.min.js"></scrip>
+    <script src="{{asset('/public/js/script.js')}}"></script>
     <script src="JavaScriptファイルのURL"></script>
 </body>
 </html>
