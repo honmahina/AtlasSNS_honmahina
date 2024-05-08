@@ -63,7 +63,7 @@
     </div>
     <footer>
     </footer>
-    <script src="{{asset('/public/js/script.js')}}"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="{{asset('/js/jquery-3.7.1.js')}}"></script>
+    <script src="{{asset('/js/script.js')}}"></script>
 </body>
 </html>
